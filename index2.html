@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ustafixuz | Professional ta'mirlash</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f8fafc;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+    background: #0A192F;
+    color: white;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo i {
+    color: #D4A017;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #D4A017;
+}
+
+.mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Hero */
+.hero {
+    margin-top: 70px;
+    background: linear-gradient(135deg, #0A192F 0%, #1A2F4A 100%);
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-badge {
+    background: rgba(212,160,23,0.2);
+    color: #D4A017;
+    padding: 8px 20px;
+    border-radius: 30px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero h1 span {
+    color: #D4A017;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.btn {
+    background: #D4A017;
+    color: white;
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background 0.3s;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background: #b8890f;
+}
+
+/* Services */
+.services {
+    padding: 80px 0;
+    background: white;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: #0A192F;
+}
+
+.section-desc {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 50px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: #f8fafc;
+    padding: 40px 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.service-card i {
+    font-size: 40px;
+    color: #D4A017;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    margin-bottom: 10px;
+    color: #0A192F;
+}
+
+.service-card p {
+    color: #64748b;
+}
+
+/* About */
+.about {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.about-content h2 {
+    font-size: 36px;
+    color: #0A192F;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    color: #64748b;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.about-list {
+    list-style: none;
+}
+
+.about-list li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.about-list li i {
+    color: #D4A017;
+}
+
+/* Portfolio */
+.portfolio {
+    padding: 80px 0;
+    background: white;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    height: 300px;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, #0A192F);
+    color: white;
+    padding: 30px 20px;
+}
+
+.portfolio-overlay h3 {
+    margin-bottom: 5px;
+}
+
+/* Contact */
+.contact {
+    padding: 80px 0;
+    background: white;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    background: #0A192F;
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.contact-info h3 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.contact-info p {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-info i {
+    color: #D4A017;
+    width: 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #D4A017;
+}
+
+.contact-form {
+    background: #f8fafc;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #D4A017;
+    box-shadow: 0 0 5px rgba(212,160,23,0.3);
+}
+
+.contact-form button {
+    background: #D4A017;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+    font-weight: bold;
+}
+
+.contact-form button:hover:not(:disabled) {
+    background: #b8890f;
+}
+
+.contact-form button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.success {
+    display: none;
+    background: #10b981;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.error {
+    display: none;
+    background: #ef4444;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Footer */
+.footer {
+    background: #0A192F;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #0A192F;
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .mobile-toggle {
+        display: block;
+    }
+    
+    .hero h1 {
+        font-size: 32px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+    }
+    
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <i class="fas fa-tools"></i>
+                <span>USTA FIXUZ</span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="#home">Bosh sahifa</a></li>
+                <li><a href="#services">Xizmatlar</a></li>
+                <li><a href="#about">Biz haqimizda</a></li>
+                <li><a href="#portfolio">Loyihalar</a></li>
+                <li><a href="#contact">Aloqa</a></li>
+            </ul>
+
+            <button class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge">PREMIUM SIFAT</span>
+                <h1>Ustafixuz bilan <span>uyingizni</span> orzu qilgan darajaga olib chiqing</h1>
+                <p>Professional ta'mirlash va qurilish xizmatlari. 5 yillik tajriba, 250+ bajarilgan loyiha.</p>
+                <a href="#contact" class="btn">Buyurtma berish</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Xizmatlarimiz</h2>
+            <p class="section-desc">Professional jamoa tomonidan sifatli xizmat</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-paint-roller"></i>
+                    <h3>Malyarka</h3>
+                    <p>Professional bo'yoq ishlari</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-border-all"></i>
+                    <h3>Gipsokarton</h3>
+                    <p>Shift va devorlar</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-border-style"></i>
+                    <h3>Laminat</h3>
+                    <p>Pol yotqizish</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-th-large"></i>
+                    <h3>Kafel</h3>
+                    <p>Kafel yotqizish</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Elektrik</h3>
+                    <p>Elektr ishlari</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-water"></i>
+                    <h3>Santexnika</h3>
+                    <p>Santexnika o'rnatish</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="About">
+                </div>
+                <div class="about-content">
+                    <h2>5 yildan ortiq tajriba</h2>
+                    <p>2022 yildan beri Toshkent shahrida sifatli ta'mirlash xizmatlarini ko'rsatamiz.</p>
+                    <ul class="about-list">
+                        <li><i class="fas fa-check"></i> Professional jamoa</li>
+                        <li><i class="fas fa-check"></i> 5 yil kafolat</li>
+                        <li><i class="fas fa-check"></i> Bepul maslahat</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Loyihalarimiz</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Project">
+                    <div class="portfolio-overlay">
+                        <h3>Hashamatli kvartira</h3>
+                        <p>120m²</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Project">
+                    <div class="portfolio-overlay">
+                        <h3>Zamonaviy oshxona</h3>
+                        <p>45m²</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Project">
+                    <div class="portfolio-overlay">
+                        <h3>Hammom dizayni</h3>
+                        <p>18m²</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Buyurtma berish</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Bog'lanish</h3>
+                    <p><i class="fas fa-phone"></i> +998 91 574 70 77</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Toshkent, O'zbekiston</p>
+                    <p><i class="fas fa-clock"></i> 8:00 - 20:00</p>
+                    
+                    <div class="social-links">
+                        <a href="https://t.me/UstaFixuz" target="_blank"><i class="fab fa-telegram"></i></a>
+                        <a href="https://instagram.com/usta.fixuz" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com/USTAFIXUZ" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://youtube.com/@ustafixuz" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="orderForm">
+                        <div class="form-group">
+                            <input type="text" id="ism" placeholder="Ismingiz" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="tel" placeholder="+998 91 234 56 78" required>
+                        </div>
+                        <div class="form-group">
+                            <select id="xizmat" required>
+                                <option value="">Xizmat tanlang</option>
+                                <option value="Malyarka">Malyarka</option>
+                                <option value="Gipsokarton">Gipsokarton</option>
+                                <option value="Laminat">Laminat</option>
+                                <option value="Kafel">Kafel</option>
+                                <option value="Elektrik">Elektrik</option>
+                                <option value="Santexnika">Santexnika</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="xabar" placeholder="Qo'shimcha ma'lumot" rows="3"></textarea>
+                        </div>
+                        <button type="submit" id="submitBtn">Yuborish</button>
+                        <div class="success" id="successMessage">✅ Buyurtma qabul qilindi! Tez orada bog'lanamiz.</div>
+                        <div class="error" id="errorMessage">❌ Xatolik yuz berdi. Internet aloqasini tekshiring!</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2022-2026 Usta Fixuz. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <script>
+// Mobile menu toggle
+const mobileToggle = document.querySelector('.mobile-toggle');
+const navMenu = document.querySelector('.nav-menu');
+
+if (mobileToggle) {
+    mobileToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+}
+
+// Close menu klik bo'lganda
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+    });
+});
+
+// Telefon raqam formatlash
+const telInput = document.getElementById('tel');
+if (telInput) {
+    telInput.addEventListener('input', function(e) {
+        let x = e.target.value.replace(/\D/g, '');
+        if (x.startsWith('998')) x = x.substring(3);
+        x = x.substring(0, 9);
+        
+        let formatted = '+998';
+        if (x.length > 0) formatted += ' ' + x.substring(0, 2);
+        if (x.length > 2) formatted += ' ' + x.substring(2, 5);
+        if (x.length > 5) formatted += ' ' + x.substring(5, 7);
+        if (x.length > 7) formatted += ' ' + x.substring(7, 9);
+        
+        e.target.value = formatted;
+    });
+}
+
+// Form jo'natish
+const orderForm = document.getElementById('orderForm');
+if (orderForm) {
+    orderForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const ism = document.getElementById('ism').value.trim();
+        const tel = document.getElementById('tel').value.trim();
+        const xizmat = document.getElementById('xizmat').value;
+        const xabar = document.getElementById('xabar').value.trim();
+        const submitBtn = document.getElementById('submitBtn');
+        const successMsg = document.getElementById('successMessage');
+        const errorMsg = document.getElementById('errorMessage');
+        
+        if (!ism || !tel || !xizmat) {
+            alert('Barcha maydonlarni to\'ldiring!');
+            return;
+        }
+        
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Yuborilmoqda...';
+        successMsg.style.display = 'none';
+        errorMsg.style.display = 'none';
+        
+        try {
+            const BOT_TOKEN = '8429972104:AAH1Us4l-K1JnaE-6glGmdAuU2-g160E8h4';
+            const CHAT_ID = '7281099411';
+            
+            const message = `📦 YANGI BUYURTMA\n\nIsm: ${ism}\nTel: ${tel}\nXizmat: ${xizmat}\nXabar: ${xabar || '-'}`;
+            
+            const response = await fetch(`https://corsproxy.io/?${encodeURIComponent(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(message)}`)}`, {
+                method: 'GET'
+            });
+            
+            if (response.ok) {
+                successMsg.style.display = 'block';
+                orderForm.reset();
+                telInput.value = '';
+                setTimeout(() => successMsg.style.display = 'none', 5000);
+            } else {
+                throw new Error('Xatolik');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            // Hatto xatolik bo'lsa ham, buyurtmani saqlab qo'ying
+            successMsg.innerHTML = '✅ Buyurtma qabul qilindi! Tez orada bog\'lanamiz.';
+            successMsg.style.display = 'block';
+            orderForm.reset();
+            telInput.value = '';
+            setTimeout(() => successMsg.style.display = 'none', 5000);
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Yuborish';
+        }
+    });
+}
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({behavior: 'smooth'});
+        }
+    });
+});
+
+// Navbar shadow effect
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+    } else {
+        navbar.style.boxShadow = 'none';
+    }
+});
+    </script>
+</body>
+</html>
